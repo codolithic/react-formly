@@ -1,0 +1,143 @@
+{/* Text & Personal Info Inputs */}
+<fieldset>
+    <legend>Personal Information</legend>
+    <label htmlFor="fullName">Full Name (Text):</label>
+    <input
+        type="text"
+        id="fullName"
+        name="fullName"
+        placeholder="John Doe"
+        required
+    ></input>
+
+    <label htmlFor="email">Email Address (Email):</label>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="example@domain.com"
+        required
+    ></input>
+
+    <label htmlFor="password">Password (Password):</label>
+    <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter secure password"
+        required
+    />
+
+    <label htmlFor="bio">Biography (Textarea):</label>
+    <textarea
+        id="bio"
+        name="bio"
+        rows={4}
+        placeholder="Tell us about yourself..."
+    ></textarea>
+</fieldset>
+
+{/* Contact & Numbers */}
+<fieldset>
+    <legend>Contact & Numbers</legend>
+    <label htmlFor="phone">Phone Number (Tel):</label>
+    <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="0400 000 000"
+    />
+
+    <label htmlFor="website">Website (URL):</label>
+    <input
+        type="url"
+        id="website"
+        name="website"
+        placeholder="https://example.com"
+    />
+
+    <label htmlFor="age">Age (Number):</label>
+    <input
+        type="number"
+        id="age"
+        name="age"
+        min="18"
+        max="99"
+        placeholder="25"
+    />
+
+    <label htmlFor="satisfaction">
+        Satisfaction Level (Range Slider):
+    </label>
+    <input
+        type="range"
+        id="satisfaction"
+        name="satisfaction"
+        min="1"
+        max="10"
+        value="5"
+    />
+</fieldset>
+
+{/* Date & Time */}
+<fieldset>
+    <legend>Date & Time</legend>
+    <label htmlFor="dob">Date of Birth (Date):</label>
+    <input type="date" id="dob" name="dob" />
+
+    <label htmlFor="appointment">Preferred Time (Time):</label>
+    <input type="time" id="appointment" name="appointment" />
+
+    <label htmlFor="event">Event Details (Datetime-local):</label>
+    <input type="datetime-local" id="event" name="event" />
+</fieldset>
+
+{/* Selection Inputs */}
+<fieldset>
+    <legend>Selections</legend>
+    <label htmlFor="country">Country (Dropdown Select):</label>
+    <select id="country" name="country">
+        <option value="" disabled selected>
+        Select your country
+        </option>
+        <option value="au">Australia</option>
+        <option value="nz">New Zealand</option>
+        <option value="us">United States</option>
+        <option value="uk">United Kingdom</option>
+    </select>
+
+    <label>Gender (Radio Buttons - Single Choice):</label>
+    <input type="radio" id="male" name="gender" value="male" />
+    <label htmlFor="male" style={{ display: "inline" }}>
+        Male
+    </label>
+    <input type="radio" id="female" name="gender" value="female" />
+    <label htmlFor="female" style={{ display: "inline" }}>
+        Female
+    </label>
+
+    <label>Interests (Checkboxes - Multiple Choice):</label>
+    <input type="checkbox" id="int1" name="interests" value="tech" />
+    <label htmlFor="int1" style={{ display: "inline" }}>
+        Technology
+    </label>
+    <input type="checkbox" id="int2" name="interests" value="design" />
+    <label htmlFor="int2" style={{ display: "inline" }}>
+        Design
+    </label>
+</fieldset>
+
+{/* Files & Colors */}
+<fieldset>
+    <legend>Files & Utilities</legend>
+    <label htmlFor="resume">Upload Resume (File):</label>
+    <input
+        type="file"
+        id="resume"
+        name="resume"
+        accept=".pdf,.doc,.docx"
+    />
+
+    <label htmlFor="favColor">Pick a Favorite Color (Color):</label>
+    <input type="color" id="favColor" name="favColor" value="#ff0000" />
+</fieldset>
