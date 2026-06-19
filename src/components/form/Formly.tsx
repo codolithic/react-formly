@@ -1,9 +1,7 @@
-import type {
-  PropsWithChildren,
-  ComponentPropsWithoutRef,
-  HTMLInputTypeAttribute,
-} from "react";
-import FormlyProvider, { useFormlyContext } from "./formContext";
+import type { PropsWithChildren } from "react";
+import FormlyProvider from "./formContext";
+import { FormGroup } from "./FormGroup";
+import { FormInput } from "./FormInput";
 
 interface FormlyProps<
   TData extends Record<string, unknown>,
@@ -13,44 +11,6 @@ interface FormlyProps<
   readonly wrapperClassName?: string;
   readonly className?: string;
   readonly submitHandler: (data: TData) => Promise<void>;
-}
-
-interface FormInputProps extends ComponentPropsWithoutRef<"input"> {
-  readonly wrapperClassName?: string;
-  readonly label: string;
-  readonly id: string;
-  readonly inputType: HTMLInputTypeAttribute;
-}
-
-interface FormGroupProps extends PropsWithChildren {
-  readonly title?: string;
-  readonly className?: string;
-}
-
-function FormInput({
-  id,
-  label,
-  inputType,
-  wrapperClassName,
-  ...rest
-}: FormInputProps) {
-  const { name } = rest;
-
-  return (
-    <div key={id} {...(wrapperClassName && { className: wrapperClassName })}>
-      <label htmlFor={id}>{label}</label>
-      <input id={id} name={name || id} type={inputType} {...rest} />
-    </div>
-  );
-}
-
-function FormGroup({ title, className, children }: Readonly<FormGroupProps>) {
-  return (
-    <fieldset {...(className && { className })}>
-      <legend>{title}</legend>
-      {children}
-    </fieldset>
-  );
 }
 
 function Formly<TFormData extends Record<string, unknown>>({
